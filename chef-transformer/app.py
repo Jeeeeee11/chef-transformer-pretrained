@@ -4,6 +4,8 @@ import streamlit as st
 import torch
 from transformers import pipeline, set_seed
 from transformers import AutoTokenizer
+import requests
+from io import BytesIO
 
 from PIL import (
     ImageFont,
@@ -52,7 +54,10 @@ class TextGeneration:
             "giovanni": "asset/frame/food-image-logo-bg-g.png",
         }
         self.fonts = {
-            "title": ImageFont.truetype("asset/fonts/Poppins-Bold.ttf", 70),
+            response = requests.get("https://drive.google.com/drive/folders/1Rr3Cgs-IE2sxYQAIq7-0RC5b0BBE8kDB?usp=share_link")
+            font_file = BytesIO(response.content)
+            "title": ImageFont.truetype(font_file, 70),
+
             "sub_title": ImageFont.truetype("asset/fonts/Poppins-Medium.ttf", 30),
             "body_bold": ImageFont.truetype("asset/fonts/Montserrat-Bold.ttf", 22),
             "body": ImageFont.truetype("asset/fonts/Montserrat-Regular.ttf", 18),
