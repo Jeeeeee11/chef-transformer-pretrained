@@ -54,7 +54,7 @@ class TextGeneration:
             "giovanni": "asset/frame/food-image-logo-bg-g.png",
         }
         self.fonts = {
-            "title": ImageFont.truetype("asset/fonts/Poppins-Bold.ttf", 70),
+            "title": ImageFont.truetype("/home/danilo/env1/DRS-WSL/chef-transformer-pretrained/chef-transformer/asset/fonts/Poppins-Bold.ttf", 70),
             "sub_title": ImageFont.truetype("asset/fonts/Poppins-Medium.ttf", 30),
             "body_bold": ImageFont.truetype("asset/fonts/Montserrat-Bold.ttf", 22),
             "body": ImageFont.truetype("asset/fonts/Montserrat-Regular.ttf", 18),
