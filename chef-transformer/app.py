@@ -54,7 +54,17 @@ class TextGeneration:
             "giovanni": "asset/frame/food-image-logo-bg-g.png",
         }
         self.fonts = {
-            "title": ImageFont.truetype("asset/fonts/Poppins-Bold.ttf", 70),
+
+            current_dir = os.path.dirname(os.path.abspath(__file__))
+            font_path = os.path.join(current_dir, "asset/fonts/Poppins-Bold.ttf")
+
+            # Debugging information
+            print(f"Font path: {font_path}")
+            print(f"Font file exists: {os.path.exists(font_path)}")
+
+            # Other parts of your code...
+
+            "title": ImageFont.truetype(font_path, 70),
             "sub_title": ImageFont.truetype("asset/fonts/Poppins-Medium.ttf", 30),
             "body_bold": ImageFont.truetype("asset/fonts/Montserrat-Bold.ttf", 22),
             "body": ImageFont.truetype("asset/fonts/Montserrat-Regular.ttf", 18),
